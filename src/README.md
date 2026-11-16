@@ -50,3 +50,12 @@ A aplicação usa um modelo de dados simples, com identificadores significativos
    - Ano escolar
 
 Todos os dados são armazenados em memória, o que significa que serão reiniciados quando o servidor for reiniciado.
+
+## Testes
+
+Instale as dependências do projeto a partir da raiz do repositório e execute a suíte de testes:
+
+```bash
+pip install -r requirements.txt
+pytest
+```
