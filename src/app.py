@@ -2,7 +2,7 @@
 High School Management System API
 
 A super simple FastAPI application that allows students to view and sign up
-for extracurricular activities at Mergington High School.
+for extracurricular activities at Mergington High School, or cancel their signups.
 """
 
 from fastapi import FastAPI, HTTPException
@@ -105,3 +105,22 @@ def signup_for_activity(activity_name: str, email: str):
     # Add student
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
+
+
+@app.delete("/activities/{activity_name}/signup")
+def cancel_signup_for_activity(activity_name: str, email: str):
+    """Cancel a student's signup for an activity"""
+    if activity_name not in activities:
+        raise HTTPException(status_code=404, detail="Activity not found")
+
+    participants = activities[activity_name]["participants"]
+    if email not in participants:
+        raise HTTPException(
+            status_code=404,
+            detail="Student is not signed up for this activity",
+        )
+
+    participants[:] = [
+        participant for participant in participants if participant != email
+    ]
+    return {"message": f"Cancelled signup for {email} in {activity_name}"}
