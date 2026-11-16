@@ -1,11 +1,12 @@
 # API de Atividades da Mergington High School
 
-Uma aplicação FastAPI bem simples que permite às pessoas estudantes visualizar e se inscrever em atividades extracurriculares.
+Uma aplicação FastAPI bem simples que permite às pessoas estudantes visualizar atividades extracurriculares, se inscrever e cancelar inscrições.
 
 ## Funcionalidades
 
 - Visualizar todas as atividades extracurriculares disponíveis
 - Inscrever-se em atividades
+- Cancelar a inscrição em atividades
 
 ## Primeiros passos
 
@@ -31,6 +32,7 @@ Uma aplicação FastAPI bem simples que permite às pessoas estudantes visualiza
 | ------ | ----------------------------------------------------------------- | ---------------------------------------------------------------------- |
 | GET    | `/activities`                                                     | Retorna todas as atividades com seus detalhes e o número atual de participantes |
 | POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Inscreve em uma atividade                                              |
+| DELETE | `/activities/{activity_name}/signup?email=student@mergington.edu` | Cancela a inscrição de uma pessoa estudante                             |
 
 ## Modelo de dados
 
@@ -48,3 +50,12 @@ A aplicação usa um modelo de dados simples, com identificadores significativos
    - Ano escolar
 
 Todos os dados são armazenados em memória, o que significa que serão reiniciados quando o servidor for reiniciado.
+
+## Testes
+
+Instale as dependências do projeto a partir da raiz do repositório e execute a suíte de testes:
+
+```bash
+pip install -r requirements.txt
+pytest
+```
