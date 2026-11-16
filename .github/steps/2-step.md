@@ -103,7 +103,7 @@ O **Inline Chat** e o painel do **Copilot Chat** são parecidos, mas diferem no 
    > ![Static Badge](https://img.shields.io/badge/-Prompt-text?style=social&logo=github%20copilot)
    >
    > ```prompt
-   > Adicione mais 2 atividades esportivas, mais 2 atividades artísticas
+   > Adicione mais 2 atividades esportivas, mais 2 atividades artísticas e mais 2 atividades intelectuais. e mais 2 atividades intelectuais.
    > e mais 2 atividades intelectuais.
    > ```
 
